@@ -159,6 +159,7 @@ interface IQueryBuilder {
 	 * @return IResult|int
 	 * @throws Exception since 21.0.0
 	 * @since 8.2.0
+	 * @deprecated 21.0.0 Use executeQuery or executeUpdate
 	 */
 	public function execute();
 
