@@ -312,7 +312,7 @@ $CONFIG = [
  *
  * This will show an error. But the the direct login still works with adding ?direct=1
  */
-'block_login_form' => false,
+'hide_login_form' => false,
 
 /**
  * The directory where the skeleton files are located. These files will be

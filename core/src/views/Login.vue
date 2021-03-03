@@ -20,7 +20,7 @@
   -->
 
 <template>
-	<div v-if="!blockLoginForm || directLogin">
+	<div v-if="!hideLoginForm || directLogin">
 		<transition name="fade" mode="out-in">
 			<div v-if="!passwordlessLogin && !resetPassword && resetPasswordTarget === ''"
 				key="login">
@@ -162,7 +162,7 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		blockLoginForm: {
+		hideLoginForm: {
 			type: Boolean,
 			default: false
 		}
