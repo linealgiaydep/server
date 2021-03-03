@@ -191,6 +191,8 @@ class LoginController extends Controller {
 
 		$this->initialStateService->provideInitialState('core', 'webauthn-available', $this->webAuthnManager->isWebAuthnAvailable());
 
+		$this->initialStateService->provideInitialState('core', 'blockLoginForm', $this->config->getSystemValueBool('block_login_form', false));
+
 		// OpenGraph Support: http://ogp.me/
 		Util::addHeader('meta', ['property' => 'og:title', 'content' => Util::sanitizeHTML($this->defaults->getName())]);
 		Util::addHeader('meta', ['property' => 'og:description', 'content' => Util::sanitizeHTML($this->defaults->getSlogan())]);

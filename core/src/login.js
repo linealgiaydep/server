@@ -67,5 +67,6 @@ new View({
 		hasPasswordless: fromStateOr('webauthn-available', false),
 		isHttps: window.location.protocol === 'https:',
 		hasPublicKeyCredential: typeof (window.PublicKeyCredential) !== 'undefined',
+		blockLoginForm: fromStateOr('blockLoginForm', false),
 	},
 }).$mount('#login')
