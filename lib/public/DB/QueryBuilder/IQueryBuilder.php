@@ -169,6 +169,7 @@ interface IQueryBuilder {
 	 * @return IResult
 	 * @since 22.0.0
 	 *
+	 * @throws Exception
 	 * @throws \RuntimeException in case of usage with non select query
 	 */
 	public function executeQuery(): IResult;
@@ -179,6 +180,7 @@ interface IQueryBuilder {
 	 * @return int
 	 * @since 22.0.0
 	 *
+	 * @throws Exception
 	 * @throws \RuntimeException in case of usage with select query
 	 */
 	public function executeUpdate(): int;

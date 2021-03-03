@@ -297,7 +297,11 @@ class QueryBuilder implements IQueryBuilder {
 			throw new \RuntimeException('Invalid query type, expected SELECT query');
 		}
 
-		$result = $this->execute();
+		try {
+			$result = $this->execute();
+		} catch (\Doctrine\DBAL\Exception $e) {
+			throw \OC\DB\Exceptions\DbalException::wrap($e);
+		}
 
 		if ($result instanceof IResult) {
 			return $result;
@@ -311,9 +315,13 @@ class QueryBuilder implements IQueryBuilder {
 			throw new \RuntimeException('Invalid query type, expected INSERT, DELETE or UPDATE query');
 		}
 
-		$result = $this->execute();
+		try {
+			$result = $this->execute();
+		} catch (\Doctrine\DBAL\Exception $e) {
+			throw \OC\DB\Exceptions\DbalException::wrap($e);
+		}
 
-		if ($result instanceof IResult) {
+		if (!is_int($result)) {
 			throw new \RuntimeException('Invalid return type for query');
 		}
 
