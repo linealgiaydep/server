@@ -159,25 +159,25 @@ interface IQueryBuilder {
 	 * @return IResult|int
 	 * @throws Exception since 21.0.0
 	 * @since 8.2.0
-	 * @deprecated 21.0.0 Use executeQuery or executeUpdate
+	 * @deprecated 22.0.0 Use executeQuery or executeUpdate
 	 */
 	public function execute();
 
 	/**
 	 * Execute for select statements
 	 *
-	 * @return IStatement
-	 * @since 21.0.0
+	 * @return IResult
+	 * @since 22.0.0
 	 *
 	 * @throws \RuntimeException in case of usage with non select query
 	 */
-	public function executeQuery(): IStatement;
+	public function executeQuery(): IResult;
 
 	/**
 	 * Execute  for insert, update and delete statements
 	 *
 	 * @return int
-	 * @since 21.0.0
+	 * @since 22.0.0
 	 *
 	 * @throws \RuntimeException in case of usage with select query
 	 */
