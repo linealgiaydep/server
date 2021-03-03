@@ -537,6 +537,7 @@ class ObjectStoreStorage extends \OC\Files\Storage\Common {
 			if ($sourceStorage->getObjectStore()->getStorageId() === $this->getObjectStore()->getStorageId()) {
 				$sourceEntry = $sourceStorage->getCache()->get($sourceInternalPath);
 				$this->copyInner($sourceEntry, $targetInternalPath);
+				return true;
 			}
 		}
 
